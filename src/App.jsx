@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Button } from "./components/Button";
+import { Count } from "./components/Count";
 
 export const App = () => {
   const [count, setCount] = useState(0);
@@ -6,11 +8,27 @@ export const App = () => {
   function subtract() { setCount(prevNum => prevNum - 1) }
   return (
     <main>
-      <h1>How many time will Bob say "state" in this section</h1>
+      <Count
+        label=" How many time will Bob say 'state' in this section"
+        className=""
+      />
       <div className="counter">
-        <button className="minus" aria-label="Decrease count" onClick={subtract}>-</button>
-        <h2 className="count">{count}</h2>
-        <button className="plus" aria-label="increase count" onClick={add}>+</button>
+        <Button
+          className="minus"
+          ariaLabel="decrease count"
+          onClick={subtract}
+          label="-"
+        />
+        <Count
+          label={count}
+          className="count"
+        />
+        <Button
+          className="plus"
+          ariaLabel="increase count"
+          onClick={add}
+          label="+"
+        />
       </div>
     </main>
   )
