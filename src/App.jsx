@@ -6,6 +6,7 @@ export const App = () => {
   const [count, setCount] = useState(0);
   function add() { setCount(prevNum => prevNum + 1) }
   function subtract() { setCount(prevNum => prevNum - 1) }
+  console.log("app rendered")
   return (
     <main>
       <Count
